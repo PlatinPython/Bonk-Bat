@@ -1,0 +1,10 @@
+{
+  "bonk": {
+    "sounds": [
+      {
+        "name": "bonkbat:bonk",
+        "volume": 0.7
+      }
+    ]
+  }
+}
