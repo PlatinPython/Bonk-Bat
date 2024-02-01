@@ -13,8 +13,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        singleTexture(ItemRegistry.OAK_BAT.getId().getPath(), modLoc(ITEM_FOLDER + "/bat"), "0",
-                      mcLoc(BLOCK_FOLDER + "/stripped_oak_log")
+        singleTexture(
+            ItemRegistry.OAK_BAT.getId().getPath(), modLoc(ITEM_FOLDER + "/bat"), "0",
+            mcLoc(BLOCK_FOLDER + "/stripped_oak_log")
         );
     }
 }

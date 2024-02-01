@@ -15,7 +15,8 @@ public class ClientUtils {
         if (event.getTab() != CreativeModeTabs.COMBAT) {
             return;
         }
-        RegistryHandler.ITEMS.getEntries()
-                             .forEach(item -> event.accept(item, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS));
+        RegistryHandler.ITEMS.getEntries().forEach(
+            item -> event.accept(item, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS)
+        );
     }
 }

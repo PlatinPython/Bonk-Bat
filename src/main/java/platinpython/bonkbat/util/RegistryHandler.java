@@ -12,8 +12,8 @@ import platinpython.bonkbat.util.registries.SoundRegistry;
 public class RegistryHandler {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BonkBat.MOD_ID);
 
-    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS,
-                                                                                      BonkBat.MOD_ID
+    public static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(
+        ForgeRegistries.SOUND_EVENTS, BonkBat.MOD_ID
     );
 
     public static void register() {
