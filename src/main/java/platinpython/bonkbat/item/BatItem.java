@@ -18,10 +18,11 @@ public class BatItem extends Item {
         if (!(entity instanceof LivingEntity livingEntity)) {
             return false;
         }
-        player.level.playSound(
-            null, entity.getX(), entity.getY(), entity.getZ(), SoundRegistry.BONK_SOUND.get(), player.getSoundSource(),
-            1F, 1F
-        );
+        player.level()
+            .playSound(
+                null, entity.getX(), entity.getY(), entity.getZ(), SoundRegistry.BONK_SOUND.get(),
+                player.getSoundSource(), 1F, 1F
+            );
         livingEntity
             .knockback(0.4, Mth.sin(player.getYRot() * Mth.DEG_TO_RAD), -Mth.cos(player.getYRot() * Mth.DEG_TO_RAD));
         return true;
