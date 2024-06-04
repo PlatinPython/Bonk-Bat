@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:stripped_warped_hyphae"
+    }
+  },
+  "pattern": [
+    " W ",
+    " W ",
+    " S "
+  ],
+  "result": {
+    "item": "bonkbat:warped_bat"
+  },
+  "show_notification": true
+}

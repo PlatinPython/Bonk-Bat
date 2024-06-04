@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:stripped_spruce_wood"
+    }
+  },
+  "pattern": [
+    " W ",
+    " W ",
+    " S "
+  ],
+  "result": {
+    "item": "bonkbat:spruce_bat"
+  },
+  "show_notification": true
+}

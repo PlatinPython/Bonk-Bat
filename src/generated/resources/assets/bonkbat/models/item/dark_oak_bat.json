@@ -1,0 +1,6 @@
+{
+  "parent": "bonkbat:item/bat",
+  "textures": {
+    "0": "minecraft:block/stripped_dark_oak_log"
+  }
+}

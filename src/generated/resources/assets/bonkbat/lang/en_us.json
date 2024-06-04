@@ -1,3 +1,12 @@
 {
-  "item.bonkbat.oak_bat": "Oak Bat"
+  "item.bonkbat.acacia_bat": "Acacia Bat",
+  "item.bonkbat.birch_bat": "Birch Bat",
+  "item.bonkbat.cherry_bat": "Cherry Bat",
+  "item.bonkbat.crimson_bat": "Crimson Bat",
+  "item.bonkbat.dark_oak_bat": "Dark Oak Bat",
+  "item.bonkbat.jungle_bat": "Jungle Bat",
+  "item.bonkbat.mangrove_bat": "Mangrove Bat",
+  "item.bonkbat.oak_bat": "Oak Bat",
+  "item.bonkbat.spruce_bat": "Spruce Bat",
+  "item.bonkbat.warped_bat": "Warped Bat"
 }

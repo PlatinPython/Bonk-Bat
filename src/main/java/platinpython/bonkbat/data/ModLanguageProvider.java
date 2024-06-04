@@ -2,8 +2,9 @@ package platinpython.bonkbat.data;
 
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
+import org.codehaus.plexus.util.StringUtils;
 import platinpython.bonkbat.BonkBat;
-import platinpython.bonkbat.util.registries.ItemRegistry;
+import platinpython.bonkbat.util.BatTypes;
 
 public class ModLanguageProvider extends LanguageProvider {
     public ModLanguageProvider(PackOutput output) {
@@ -12,6 +13,8 @@ public class ModLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(ItemRegistry.OAK_BAT.get(), "Oak Bat");
+        BatTypes.TYPES.forEach(
+            (name, type) -> addItem(type.bat(), StringUtils.capitaliseAllWords(name.replace('_', ' ')) + " Bat")
+        );
     }
 }

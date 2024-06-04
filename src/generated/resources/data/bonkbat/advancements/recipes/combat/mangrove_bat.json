@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bonkbat:mangrove_bat"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:stripped_mangrove_wood"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_wood",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bonkbat:mangrove_bat"
+    ]
+  },
+  "sends_telemetry_event": false
+}
