@@ -12,7 +12,5 @@ public class ModRecipeProvider extends RecipeProvider {
     }
 
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> writer) {
-
-    }
+    protected void buildRecipes(Consumer<FinishedRecipe> writer) {}
 }
