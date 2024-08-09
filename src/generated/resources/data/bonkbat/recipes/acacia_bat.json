@@ -1,6 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
+  "group": "bonkbat:bat",
   "key": {
     "S": {
       "item": "minecraft:stick"
