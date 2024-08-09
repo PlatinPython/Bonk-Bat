@@ -1,8 +1,19 @@
 package platinpython.bonkbat.util;
 
+import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.Mth;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.monster.Pillager;
+import net.minecraft.world.entity.monster.Vindicator;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import platinpython.bonkbat.BonkBat;
@@ -11,6 +22,9 @@ import platinpython.bonkbat.util.registries.SoundRegistry;
 
 @Mod.EventBusSubscriber(modid = BonkBat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class EventHandler {
+    private static final ImmutableSet<Class<? extends Mob>> CLASSES =
+        ImmutableSet.of(Zombie.class, AbstractSkeleton.class, AbstractPiglin.class, Pillager.class, Vindicator.class);
+
     @SubscribeEvent
     public static void onLivingAttack(LivingAttackEvent event) {
         if (!(event.getSource().getEntity() instanceof LivingEntity attacker)) {
@@ -30,5 +44,31 @@ public class EventHandler {
             );
         event.getEntity().hurtMarked = true;
         event.setCanceled(true);
+    }
+
+    @SubscribeEvent
+    public static void finalizeSpawn(MobSpawnEvent.FinalizeSpawn event) {
+        Mob mob = event.getEntity();
+        if (mob.getMainHandItem().getItem() instanceof BatItem) {
+            return;
+        }
+        if (CLASSES.stream().anyMatch(clazz -> clazz.isInstance(mob))
+            && event.getSpawnType() != MobSpawnType.CONVERSION) {
+            float chance;
+            if (mob.getMainHandItem().isEmpty()) {
+                chance = event.getLevel().getDifficulty() == Difficulty.HARD ? 0.12F : 0.07F;
+            } else {
+                chance = event.getLevel().getDifficulty() == Difficulty.HARD ? 0.05F : 0.02F;
+            }
+            if (mob.getRandom().nextFloat() <= chance) {
+                mob.setItemSlot(
+                    EquipmentSlot.MAINHAND,
+                    BatTypes.TYPES.get(BatTypes.NAMES.get(mob.getRandom().nextInt(BatTypes.NAMES.size())))
+                        .bat()
+                        .get()
+                        .getDefaultInstance()
+                );
+            }
+        }
     }
 }
