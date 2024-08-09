@@ -3,6 +3,8 @@
   "minVersion": "0.8",
   "package": "platinpython.bonkbat.mixin",
   "mixins": [
-    "MobMixin"
+    "MobMixin",
+    "ZombieMixin",
+    "AbstractSkeletonMixin"
   ]
 }
