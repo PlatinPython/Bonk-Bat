@@ -1,24 +1,28 @@
 modLoader="javafml"
-loaderVersion="[44,)"
+loaderVersion="[46,)"
 license="MIT"
+issueTrackerURL="https://github.com/PlatinPython/BonkBat/issues"
 
 [[mods]]
 modId="bonkbat"
 version="${file.jarVersion}"
 displayName="Bonk Bat"
-description="Bonk your friends."
+description="This mod enables you to craft a simple wooden bat out of any vanilla wood type. With this, you unleash the power of bonk!"
+logoFile="logo.png"
+credits="Thanks TobiBenzi for the model."
 authors="PlatinPython"
+displayURL="https://curseforge.com/minecraft/mc-mods/bonk-bat"
 
 [[dependencies.rgbblocks]]
 modId="forge"
 mandatory=true
-versionRange="[44,)"
+versionRange="[46,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.rgbblocks]]
 modId="minecraft"
 mandatory=true
-versionRange="[1.19.3,1.19.4)"
+versionRange="[1.20,1.20.2)"
 ordering="NONE"
 side="BOTH"
