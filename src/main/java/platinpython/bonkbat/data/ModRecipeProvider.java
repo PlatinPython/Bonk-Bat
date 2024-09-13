@@ -1,5 +1,6 @@
 package platinpython.bonkbat.data;
 
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
@@ -10,9 +11,11 @@ import net.minecraft.world.item.Items;
 import platinpython.bonkbat.BonkBat;
 import platinpython.bonkbat.util.BatTypes;
 
+import java.util.concurrent.CompletableFuture;
+
 public class ModRecipeProvider extends RecipeProvider {
-    public ModRecipeProvider(PackOutput output) {
-        super(output);
+    public ModRecipeProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+        super(output, lookupProvider);
     }
 
     @Override

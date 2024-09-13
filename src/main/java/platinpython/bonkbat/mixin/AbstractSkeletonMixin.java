@@ -27,7 +27,7 @@ public abstract class AbstractSkeletonMixin extends Monster implements RangedAtt
             from = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z"),
             to = @At(
                 value = "INVOKE",
-                target = "Lnet/minecraft/world/entity/monster/AbstractSkeleton;setSecondsOnFire(I)V"
+                target = "Lnet/minecraft/world/entity/monster/AbstractSkeleton;igniteForSeconds(I)V"
             )
         )
     )

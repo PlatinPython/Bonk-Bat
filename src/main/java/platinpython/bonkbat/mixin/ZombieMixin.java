@@ -24,7 +24,7 @@ public class ZombieMixin extends Monster {
         at = @At("STORE"),
         slice = @Slice(
             from = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;isEmpty()Z"),
-            to = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Zombie;setSecondsOnFire(I)V")
+            to = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/monster/Zombie;igniteForSeconds(I)V")
         )
     )
     private boolean bonkBatsUnblockSun(boolean flag) {

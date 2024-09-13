@@ -13,14 +13,14 @@ import net.minecraft.world.entity.monster.Vindicator;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import platinpython.bonkbat.BonkBat;
 import platinpython.bonkbat.item.BatItem;
 import platinpython.bonkbat.util.registries.SoundRegistry;
 
-@Mod.EventBusSubscriber(modid = BonkBat.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = BonkBat.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
 public class EventHandler {
     private static final ImmutableSet<Class<? extends Mob>> CLASSES =
         ImmutableSet.of(Zombie.class, AbstractSkeleton.class, AbstractPiglin.class, Pillager.class, Vindicator.class);
@@ -47,7 +47,7 @@ public class EventHandler {
     }
 
     @SubscribeEvent
-    public static void finalizeSpawn(MobSpawnEvent.FinalizeSpawn event) {
+    public static void finalizeSpawn(FinalizeSpawnEvent event) {
         Mob mob = event.getEntity();
         if (mob.getMainHandItem().getItem() instanceof BatItem) {
             return;
