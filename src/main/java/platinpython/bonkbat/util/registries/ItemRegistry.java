@@ -1,7 +1,7 @@
 package platinpython.bonkbat.util.registries;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.registries.ForgeRegistries;
 import platinpython.bonkbat.item.BatItem;
 import platinpython.bonkbat.util.BatTypes;
 import platinpython.bonkbat.util.RegistryHandler;
@@ -16,7 +16,7 @@ public class ItemRegistry {
                 suffix = "_hyphae";
             }
             return Objects
-                .requireNonNull(ForgeRegistries.ITEMS.getValue(new ResourceLocation("stripped_" + name + suffix)));
+                .requireNonNull(BuiltInRegistries.ITEM.get(new ResourceLocation("stripped_" + name + suffix)));
         }, RegistryHandler.ITEMS.register(name + "_bat", BatItem::new))));
     }
 }

@@ -1,85 +1,51 @@
 plugins {
+    id 'java-library'
     id 'eclipse'
-    id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id 'idea'
+    id 'net.neoforged.gradle.userdev' version '7.0.161'
     id 'com.diffplug.spotless' version '6.25.0'
-    id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = "${minecraft_version}-${mod_version}"
 group = 'platinpython.bonkbat'
-archivesBaseName = 'Bonk Bat'
+base.archivesName = 'Bonk Bat'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
-minecraft {
-    mappings channel: 'parchment', version: '2023.09.03-1.20.1'
 
-    runs {
-        client {
-            workingDirectory project.file('run')
+runs {
+    configureEach {
+        systemProperty 'forge.logging.markers', 'REGISTRIES'
 
-            property 'forge.logging.markers', 'REGISTRIES'
+        systemProperty 'forge.logging.console.level', 'debug'
 
-            property 'forge.logging.console.level', 'debug'
+        systemProperty 'mixin.debug.verbose', 'true'
+        systemProperty 'mixin.debug.export', 'true'
 
-            mods {
-                bonkbat {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        server {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            mods {
-                bonkbat {
-                    source sourceSets.main
-                }
-            }
-        }
-
-        data {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
-            property 'forge.logging.console.level', 'debug'
-
-            args '--mod', 'bonkbat', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-
-            mods {
-                bonkbat {
-                    source sourceSets.main
-                }
-            }
-        }
+        modSource project.sourceSets.main
     }
-}
 
-mixin {
-    add sourceSets.main, 'mixins.bonkbat.refmap.json'
-    config 'mixins.bonkbat.json'
+    client {
+        systemProperty 'forge.enabledGameTestNamespaces', 'bonkbat'
+    }
 
-    debug.verbose = true
-    debug.export = true
+    server {
+        systemProperty 'forge.enabledGameTestNamespaces', 'bonkbat'
+        programArgument '--nogui'
+    }
+
+    data {
+        programArguments.addAll '--mod', 'bonkbat', '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+    }
 }
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    minecraft "net.minecraftforge:forge:1.20.1-47.1.3"
+    implementation 'net.neoforged:neoforge:20.4.237'
 
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-    compileOnly "org.jspecify:jspecify:0.3.0"
+    compileOnly 'org.jspecify:jspecify:1.0.0'
 }
 
 jar {
@@ -95,8 +61,6 @@ jar {
         ])
     }
 }
-
-jar.finalizedBy('reobfJar')
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'

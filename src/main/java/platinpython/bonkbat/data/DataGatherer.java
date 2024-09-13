@@ -2,8 +2,8 @@ package platinpython.bonkbat.data;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 public class DataGatherer {
     public static void onGatherData(GatherDataEvent event) {

@@ -22,14 +22,13 @@
   },
   "requirements": [
     [
-      "has_wood",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_wood"
     ]
   ],
   "rewards": {
     "recipes": [
       "bonkbat:dark_oak_bat"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

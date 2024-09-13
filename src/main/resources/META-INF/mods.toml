@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[46,)"
+loaderVersion="[2,)"
 license="MIT"
 issueTrackerURL="https://github.com/PlatinPython/BonkBat/issues"
 
@@ -13,16 +13,13 @@ credits="Thanks TobiBenzi for the model."
 authors="PlatinPython"
 displayURL="https://curseforge.com/minecraft/mc-mods/bonk-bat"
 
+[[mixins]]
+config="mixins.bonkbat.json"
+
 [[dependencies.rgbblocks]]
-modId="forge"
-mandatory=true
-versionRange="[46,)"
-ordering="NONE"
-side="BOTH"
+modId="neoforge"
+versionRange="[20.4,)"
 
 [[dependencies.rgbblocks]]
 modId="minecraft"
-mandatory=true
-versionRange="[1.20,1.20.2)"
-ordering="NONE"
-side="BOTH"
+versionRange="[1.20.4,1.20.5)"

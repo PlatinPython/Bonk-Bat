@@ -1,7 +1,7 @@
 package platinpython.bonkbat.data;
 
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.LanguageProvider;
+import net.neoforged.neoforge.common.data.LanguageProvider;
 import org.codehaus.plexus.util.StringUtils;
 import platinpython.bonkbat.BonkBat;
 import platinpython.bonkbat.util.BatTypes;

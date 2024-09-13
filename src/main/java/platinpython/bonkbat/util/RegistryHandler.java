@@ -1,23 +1,22 @@
 package platinpython.bonkbat.util;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.item.Item;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
 import platinpython.bonkbat.BonkBat;
 import platinpython.bonkbat.util.registries.ItemRegistry;
 import platinpython.bonkbat.util.registries.SoundRegistry;
 
 public class RegistryHandler {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BonkBat.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BonkBat.MOD_ID);
 
     public static final DeferredRegister<SoundEvent> SOUNDS =
-        DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, BonkBat.MOD_ID);
+        DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, BonkBat.MOD_ID);
 
-    public static void register() {
-        ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        SOUNDS.register(FMLJavaModLoadingContext.get().getModEventBus());
+    public static void register(IEventBus bus) {
+        ITEMS.register(bus);
+        SOUNDS.register(bus);
 
         ItemRegistry.register();
         SoundRegistry.register();
