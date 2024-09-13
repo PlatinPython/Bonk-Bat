@@ -22,7 +22,7 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         BatTypes.TYPES.forEach(
             (name, type) -> ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, type.bat().get())
-                .group(new ResourceLocation(BonkBat.MOD_ID, "bat").toString())
+                .group(ResourceLocation.fromNamespaceAndPath(BonkBat.MOD_ID, "bat").toString())
                 .define('W', type.wood().get())
                 .define('S', Items.STICK)
                 .pattern(" W ")

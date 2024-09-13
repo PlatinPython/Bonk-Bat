@@ -18,8 +18,8 @@ config="mixins.bonkbat.json"
 
 [[dependencies.rgbblocks]]
 modId="neoforge"
-versionRange="[20.5,)"
+versionRange="[21.0,)"
 
 [[dependencies.rgbblocks]]
 modId="minecraft"
-versionRange="[1.20.5,)"
+versionRange="[1.21,)"

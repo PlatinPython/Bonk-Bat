@@ -15,8 +15,9 @@ public class ItemRegistry {
             if (name.equals("crimson") || name.equals("warped")) {
                 suffix = "_hyphae";
             }
-            return Objects
-                .requireNonNull(BuiltInRegistries.ITEM.get(new ResourceLocation("stripped_" + name + suffix)));
+            return Objects.requireNonNull(
+                BuiltInRegistries.ITEM.get(ResourceLocation.withDefaultNamespace("stripped_" + name + suffix))
+            );
         }, RegistryHandler.ITEMS.register(name + "_bat", BatItem::new))));
     }
 }

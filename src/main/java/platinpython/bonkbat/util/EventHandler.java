@@ -15,7 +15,7 @@ import net.minecraft.world.entity.monster.piglin.AbstractPiglin;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
-import net.neoforged.neoforge.event.entity.living.LivingAttackEvent;
+import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import platinpython.bonkbat.BonkBat;
 import platinpython.bonkbat.item.BatItem;
 import platinpython.bonkbat.util.registries.SoundRegistry;
@@ -26,7 +26,7 @@ public class EventHandler {
         ImmutableSet.of(Zombie.class, AbstractSkeleton.class, AbstractPiglin.class, Pillager.class, Vindicator.class);
 
     @SubscribeEvent
-    public static void onLivingAttack(LivingAttackEvent event) {
+    public static void onLivingAttack(LivingIncomingDamageEvent event) {
         if (!(event.getSource().getEntity() instanceof LivingEntity attacker)) {
             return;
         }
