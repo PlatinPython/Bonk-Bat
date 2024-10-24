@@ -3,10 +3,10 @@ package platinpython.bonkbat.util;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.monster.Vindicator;
@@ -53,7 +53,7 @@ public class EventHandler {
             return;
         }
         if (CLASSES.stream().anyMatch(clazz -> clazz.isInstance(mob))
-            && event.getSpawnType() != MobSpawnType.CONVERSION) {
+            && event.getSpawnType() != EntitySpawnReason.CONVERSION) {
             float chance;
             if (mob.getMainHandItem().isEmpty()) {
                 chance = event.getLevel().getDifficulty() == Difficulty.HARD ? 0.12F : 0.07F;

@@ -3,12 +3,8 @@
   "category": "equipment",
   "group": "bonkbat:bat",
   "key": {
-    "S": {
-      "item": "minecraft:stick"
-    },
-    "W": {
-      "item": "minecraft:stripped_spruce_wood"
-    }
+    "S": "minecraft:stick",
+    "W": "minecraft:stripped_spruce_wood"
   },
   "pattern": [
     " W ",

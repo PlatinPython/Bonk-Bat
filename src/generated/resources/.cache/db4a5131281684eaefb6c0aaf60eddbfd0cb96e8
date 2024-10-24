@@ -1,4 +1,4 @@
-// 1.21.1	2024-09-13T19:23:49.3171847	Recipes
+// 1.21.3	2024-10-24T19:03:36.9108304	Bonk Bat Recipes
 6116ea36bb8ee8074e4826fa053f2a816fd90647 data/bonkbat/advancement/recipes/combat/acacia_bat.json
 8e89664ae259043843ca3d169daa41cc8b6486a2 data/bonkbat/advancement/recipes/combat/birch_bat.json
 747f244304a232d16f07a819a0fc80d12878b7fb data/bonkbat/advancement/recipes/combat/cherry_bat.json
@@ -9,13 +9,13 @@ fbbb3713cde1c0cff5776824c54ccba6a0d7f27c data/bonkbat/advancement/recipes/combat
 8e5ab4726e891e01ccc2c23072bf5767cc6228d2 data/bonkbat/advancement/recipes/combat/oak_bat.json
 3a17fb8d93acb0890778d48f23720a835dbdec78 data/bonkbat/advancement/recipes/combat/spruce_bat.json
 e33d5109904e9846723eebd972049dacec8f1d12 data/bonkbat/advancement/recipes/combat/warped_bat.json
-b7ab41349fa2013e9985dbd9c7ed010ff81a2131 data/bonkbat/recipe/acacia_bat.json
-51085a575e28268c03c6156fff30ef7b38af1c6c data/bonkbat/recipe/birch_bat.json
-e402175ded2732d8b50fd01a2142320a200d1cfd data/bonkbat/recipe/cherry_bat.json
-88bdac8ed0bc31bd5c6c03453fa222e27979582d data/bonkbat/recipe/crimson_bat.json
-fc31b23d4475cf21480da3e143c6c4ba13259682 data/bonkbat/recipe/dark_oak_bat.json
-3cc650884500ead5b89b152e0b050cf2f7d45a27 data/bonkbat/recipe/jungle_bat.json
-6ffd153a80132841d6c03956ea745f66d5bed031 data/bonkbat/recipe/mangrove_bat.json
-9ba96eca5460a9d8c2adfd14645e9cfaa5e4c443 data/bonkbat/recipe/oak_bat.json
-ffd8c57cfb1c2eeda6b2df926aff17a9df14a4af data/bonkbat/recipe/spruce_bat.json
-393551e4b00b6aa30cf15c2daba0456f340b3c22 data/bonkbat/recipe/warped_bat.json
+dff63822da2eae87b7b3d3ecf47b44f307a3d9e2 data/bonkbat/recipe/acacia_bat.json
+0b80332b9346a8f3e0bf196782c7bdce81b021ed data/bonkbat/recipe/birch_bat.json
+aab05e82ddf95e0bd0d7893abcd1b470b0a3ba20 data/bonkbat/recipe/cherry_bat.json
+ae45674e31f37a31256311026da275ffcf7f58b5 data/bonkbat/recipe/crimson_bat.json
+ad8e829437e9c6bcd0989c3ab1d93a57045a7c84 data/bonkbat/recipe/dark_oak_bat.json
+d3e8802996f99ab4e3505758d6be8f1ac1d51fcf data/bonkbat/recipe/jungle_bat.json
+0b8eb36467abffceed0c2b74b98c4fa6553f633d data/bonkbat/recipe/mangrove_bat.json
+9533aaf02a097786616c35bb38caf25f26ba19f0 data/bonkbat/recipe/oak_bat.json
+ee15e867dfe7ff91906b56a92fd67ec0c81b5d66 data/bonkbat/recipe/spruce_bat.json
+3e9cedacb30994729300cd94810ee3436dfb4f08 data/bonkbat/recipe/warped_bat.json

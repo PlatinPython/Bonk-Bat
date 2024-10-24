@@ -2,11 +2,11 @@ package platinpython.bonkbat.util.registries;
 
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Item;
 import platinpython.bonkbat.item.BatItem;
 import platinpython.bonkbat.util.BatTypes;
 import platinpython.bonkbat.util.RegistryHandler;
-
-import java.util.Objects;
 
 public class ItemRegistry {
     public static void register() {
@@ -15,9 +15,11 @@ public class ItemRegistry {
             if (name.equals("crimson") || name.equals("warped")) {
                 suffix = "_hyphae";
             }
-            return Objects.requireNonNull(
-                BuiltInRegistries.ITEM.get(ResourceLocation.withDefaultNamespace("stripped_" + name + suffix))
-            );
-        }, RegistryHandler.ITEMS.register(name + "_bat", BatItem::new))));
+            return BuiltInRegistries.ITEM.get(ResourceLocation.withDefaultNamespace("stripped_" + name + suffix))
+                .orElseThrow()
+                .value();
+        }, RegistryHandler.ITEMS.registerItem(
+            name + "_bat", BatItem::new, new Item.Properties().stacksTo(1).equippableUnswappable(EquipmentSlot.HEAD)
+        ))));
     }
 }

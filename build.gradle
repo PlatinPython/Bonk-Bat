@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'eclipse'
     id 'idea'
-    id 'net.neoforged.gradle.userdev' version '7.0.163'
+    id 'net.neoforged.gradle.userdev' version '7.0.165'
     id 'com.diffplug.spotless' version '6.25.0'
 }
 
@@ -43,7 +43,7 @@ runs {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 dependencies {
-    implementation 'net.neoforged:neoforge:21.1.47'
+    implementation 'net.neoforged:neoforge:21.3.2-beta'
 
     compileOnly 'org.jspecify:jspecify:1.0.0'
 }

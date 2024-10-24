@@ -18,6 +18,6 @@ public class DataGatherer {
         generator.addProvider(event.includeClient(), new ModLanguageProvider(output));
         generator.addProvider(event.includeClient(), new ModItemModelProvider(output, existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new ModRecipeProvider(output, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider.Runner(output, lookupProvider));
     }
 }
